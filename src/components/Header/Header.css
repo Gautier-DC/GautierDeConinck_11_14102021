@@ -1,0 +1,22 @@
+.header-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.header__logo {
+    width: 145px;
+    max-width: 215px;
+    flex-grow: 1;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 45%;
+    color: #FF6060;
+    text-decoration: none;
+}

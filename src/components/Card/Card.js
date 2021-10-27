@@ -21,7 +21,7 @@ class Card extends Component {
                         state: { fromDashboard: true }
                     }}
                     />
-                    <img src={this.props.cover} />
+                    <img src={this.props.cover} alt={this.props.title}/>
                     <h2>{this.props.title}</h2>
             </div>
         )

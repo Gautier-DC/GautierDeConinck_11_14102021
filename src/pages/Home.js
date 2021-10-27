@@ -27,7 +27,7 @@ class Home extends Component {
                 <Banner />
                 <div className={style.container}>
                     {this.state.data.map(el => (
-                        <Card title={el.title} cover={el.cover} key={el.id}/>
+                        <Card title={el.title} alt={el.title} cover={el.cover} key={el.id}/>
                     ))}
                 </div>
             </main>

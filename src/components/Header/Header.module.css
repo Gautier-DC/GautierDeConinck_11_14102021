@@ -1,10 +1,13 @@
 .header {
     padding: 20px;
+    padding-bottom: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
+    max-width: 1240px;
+    margin: auto;
 }
 
 .header__logo {
@@ -20,13 +23,14 @@
     justify-content: space-between;
     flex-wrap: nowrap;
     max-width: 309px;
-    flex-basis: 40%;
-    
+    flex-basis: 40%;    
 }
 
 .header__nav a:hover{
     text-decoration: underline;
 }
+
+/*Tablets*/
 
 @media only screen and (min-width: 576px) {
 
@@ -48,11 +52,14 @@
 
 @media only screen and (min-width: 768px) {
 
-   .header__nav {
-        flex-basis: 38%;
+    .header__nav {
+        flex-basis: 45%;
         font-size: 1.5em;
     }
 }
+
+
+/*Desktop*/
 
 @media only screen and (min-width: 992px) {
 

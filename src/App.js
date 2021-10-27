@@ -7,7 +7,8 @@ import {
   useParams
 } from "react-router-dom";
 import Header from './components/Header/Header';
-import Banner from './components/Banner/Banner'
+import Footer from "./components/Footer/Footer";
+import Home from './pages/Home'
 import './App.css';
 import { Component } from 'react';
 
@@ -17,9 +18,10 @@ class App extends Component {
     return (
       <Router>
         <Header/>
-        <Route path='/'>
-          <Banner />
+        <Route exact path='/'>
+          <Home />
         </Route>
+        <Footer/>
       </Router>
     );
   }

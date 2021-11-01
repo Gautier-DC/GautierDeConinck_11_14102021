@@ -1,6 +1,7 @@
 import { Component } from "react";
 import logo from "../../assets/logo.svg"
 import { Link } from 'react-router-dom'
+
 import style from './Header.module.css'
 
 
@@ -14,7 +15,7 @@ class Header extends Component {
                 </Link>
                 <nav className={style.header__nav}>
                     <Link to='/'>ACCUEIL</Link>
-                    <Link to='/'>A PROPOS</Link>
+                    <Link to='/about'>A PROPOS</Link>
                 </nav>
             </header>
         )

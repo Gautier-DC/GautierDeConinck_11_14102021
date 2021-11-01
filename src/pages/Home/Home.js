@@ -1,7 +1,9 @@
 import { Component } from "react";
-import Banner from "../components/Banner/Banner.js";
-import Card from "../components/Card/Card.js";
-import style from './Home.module.css'
+import Banner from "../../components/Banner/Banner.js";
+import Card from "../../components/Card/Card.js";
+import style from './Home.module.css';
+import homeBanner from "../../assets/home_banner_1240x223.png"
+
 
 class Home extends Component {
 
@@ -12,8 +14,8 @@ class Home extends Component {
 
     async componentDidMount() {
         try {
-            // const response = await fetch('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json')
-            const response = await fetch('logementsData.json')
+            const response = await fetch('../../../logementsData.json')
+            console.log("xxxxx", response);
             const json = await response.json()
             this.setState({ data:json })
         } catch(error) {
@@ -24,10 +26,10 @@ class Home extends Component {
     render(){
         return (
             <main>
-                <Banner />
+                <Banner src={homeBanner} alt='littoral rocheux et argileux'/>
                 <div className={style.container}>
                     {this.state.data.map(el => (
-                        <Card title={el.title} alt={el.title} cover={el.cover} key={el.id}/>
+                        <Card title={el.title} alt={el.title} cover={el.cover} key={el.title + el.id} id={el.id}/>
                     ))}
                 </div>
             </main>

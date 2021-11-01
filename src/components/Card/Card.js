@@ -7,23 +7,18 @@ class Card extends Component {
 
     constructor(props){
         super(props)
-        console.log(props)
+        console.log("======", props)
     }
 
     render(){
+        const {id,cover,title} = this.props
         return (
-            <div className={style.card}>
-                <Link
-                    to={{
-                        pathname: "/logements",
-                        search: "?sort=name",
-                        hash: "#the-hash",
-                        state: { fromDashboard: true }
-                    }}
-                    />
-                    <img src={this.props.cover} alt={this.props.title}/>
-                    <h2>{this.props.title}</h2>
-            </div>
+            <Link to={"/housing/" + id}>
+                <article className={style.card}>
+                        <img src={cover} alt={title}/>
+                        <h2>{title}</h2>
+                </article>
+            </Link>
         )
     }
 }

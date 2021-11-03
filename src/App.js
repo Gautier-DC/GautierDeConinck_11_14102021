@@ -1,10 +1,7 @@
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
+  Route
 } from "react-router-dom";
 import Header from './components/Header/Header';
 import Footer from "./components/Footer/Footer";

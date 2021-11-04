@@ -1,0 +1,16 @@
+.tag{
+    border-radius: 0.65em;
+    background: #FF6060;
+    padding: 0.2em 2em;
+    margin-right: 1em;
+    color: #fff;
+    text-align: center;
+    font-size: 0.65em;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .tag{
+        font-size: 0.75em;
+    }
+}

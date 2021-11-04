@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Carrousel from "../../components/Carrousel/Carrousel";
+import Tags from "../../components/Tags/Tags";
 import style from './Housing.module.css'
 import { withRouter } from "react-router";
 
@@ -31,8 +32,13 @@ class Housing extends Component {
         return (
             <main className={style.housing}>
                 {matchedHousing.pictures ? <Carrousel pictures={matchedHousing.pictures} /> : null}
-                <h1>{matchedHousing.title}</h1>
-                <h2>{matchedHousing.location}</h2>
+                <div className={style.global}>
+                    <div className={style.mainInfo}>
+                        <h1>{matchedHousing.title}</h1>
+                        <h2>{matchedHousing.location}</h2>
+                        {matchedHousing.tags ? <Tags tags={matchedHousing.tags} /> : null}
+                    </div>
+                </div>
             </main>
         )
     }

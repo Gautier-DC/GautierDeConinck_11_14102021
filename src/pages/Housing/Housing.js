@@ -1,7 +1,9 @@
 import { Component } from "react";
 import Carrousel from "../../components/Carrousel/Carrousel";
 import Tags from "../../components/Tags/Tags";
-import style from './Housing.module.css'
+import Rating from "../../components/Rating/Rating";
+import Profil from "../../components/Profil/Profil";
+import style from './Housing.module.css';
 import { withRouter } from "react-router";
 
 class Housing extends Component {
@@ -11,7 +13,6 @@ class Housing extends Component {
         this.state = { matchedHousing:{} }
     }
 
-    
     async componentDidMount() {
         try {
             const {match} = this.props;
@@ -32,13 +33,17 @@ class Housing extends Component {
         return (
             <main className={style.housing}>
                 {matchedHousing.pictures ? <Carrousel pictures={matchedHousing.pictures} /> : null}
-                <div className={style.global}>
+                <section className={style.global}>
                     <div className={style.mainInfo}>
                         <h1>{matchedHousing.title}</h1>
                         <h2>{matchedHousing.location}</h2>
                         {matchedHousing.tags ? <Tags tags={matchedHousing.tags} /> : null}
                     </div>
-                </div>
+                    <div className={style.subInfo}>
+                        <Rating rating={matchedHousing.rating}/>
+                        {matchedHousing.host ? <Profil name={matchedHousing.host.name} picture={matchedHousing.host.picture}/> : null}
+                    </div>
+                </section>
             </main>
         )
     }

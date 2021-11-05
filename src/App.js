@@ -17,11 +17,11 @@ class App extends Component {
       <Router>
         <Header/>
         <Switch>
-          <Route path='/housing/:housingId'>
-            <Housing />
-          </Route>
           <Route exact path='/'>
             <Home />
+          </Route>
+          <Route path='/housing/:housingId'>
+            <Housing />
           </Route>
         </Switch>
         <Footer/>

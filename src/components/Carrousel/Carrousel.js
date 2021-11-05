@@ -10,21 +10,18 @@ class Carrousel extends Component {
         this.state={ activeIndex: 0}
     }
 
-    goToSlide(index) { 
-        this.setState({ activeIndex: index });
-    }
-
     prevSlide(e) {
         e.preventDefault();
         let index = this.state.activeIndex;
         let {pictures} = this.props;
         let picLength = pictures.length - 1;
         if(index < 1) {
-            index = picLength - 1;
+            //index = picLength;
+            this.setState({activeIndex: picLength})
         } else {
-            -- index;
+            //-- index;
+            this.setState({activeIndex: index - 1})
         }
-        this.setState({activeIndex: index})
     }
 
     nextSlide(e) {
@@ -39,14 +36,12 @@ class Carrousel extends Component {
           //  ++ index;
             this.setState({activeIndex: index + 1})
         } 
-        //this.setState({activeIndex: index})
     }
 
 
     
     render(){
         const {pictures} = this.props;
-        console.log('++++', pictures)
         return (
             <section className={style.carrousel}>
                 {pictures.map((picture, index) => {
@@ -56,12 +51,14 @@ class Carrousel extends Component {
                         }} />
                     )
                 })}
-                <button className={style.previous} onClick={(e) => this.prevSlide(e)}>
-                    <Arrow className='previous'/>
-                </button>
-                <button className={style.next} onClick={(e) => this.nextSlide(e)}>
-                    <Arrow className='next' />
-                </button>
+                { pictures.length === 1 ? null : <>
+                    <button className={style.previous} onClick={(e) => this.prevSlide(e)}>
+                        <Arrow className='previous'/>
+                    </button>
+                    <button className={style.next} onClick={(e) => this.nextSlide(e)}>
+                        <Arrow className='next' />
+                    </button></>
+                }
             </section>
         );
     }

@@ -9,10 +9,11 @@ class Banner extends Component {
     }
 
     render(){
+        const {src, alt, title} = this.props;
         return (
             <div className={styles.banner}>
                 <img src={this.props.src} alt={this.props.alt} />
-                <h1>Chez vous, partout et ailleurs</h1>
+                <h1>{title}</h1>
             </div>
         )
     }

@@ -26,7 +26,7 @@ class Home extends Component {
     render(){
         return (
             <main>
-                <Banner src={homeBanner} alt='littoral rocheux et argileux'/>
+                <Banner src={homeBanner} title={"Chez vous, partout et ailleurs"} alt="littoral rocheux et argileux"/>
                 <div className={styles.container}>
                     {this.state.data.map(el => (
                         <Card title={el.title} alt={el.title} cover={el.cover} key={el.title + el.id} id={el.id}/>

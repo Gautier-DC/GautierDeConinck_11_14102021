@@ -1,5 +1,5 @@
 import { Component } from "react";
-import style from './Carrousel.module.css'
+import styles from './Carrousel.module.css'
 import {ReactComponent as Arrow} from '../../assets/arrow.svg'
 
 
@@ -43,7 +43,7 @@ class Carrousel extends Component {
     render(){
         const {pictures} = this.props;
         return (
-            <section className={style.carrousel}>
+            <section className={styles.carrousel}>
                 {pictures.map((picture, index) => {
                     return(
                         <img src={picture} key={index} alt="" style={
@@ -52,10 +52,10 @@ class Carrousel extends Component {
                     )
                 })}
                 { pictures.length === 1 ? null : <>
-                    <button className={style.previous} onClick={(e) => this.prevSlide(e)}>
+                    <button className={styles.previous} onClick={(e) => this.prevSlide(e)}>
                         <Arrow className='previous'/>
                     </button>
-                    <button className={style.next} onClick={(e) => this.nextSlide(e)}>
+                    <button className={styles.next} onClick={(e) => this.nextSlide(e)}>
                         <Arrow className='next' />
                     </button></>
                 }

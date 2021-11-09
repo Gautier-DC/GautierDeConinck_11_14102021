@@ -1,5 +1,5 @@
 import { Component } from "react";
-import style from './Rating.module.css'
+import styles from './Rating.module.css'
 import Star from "../Star/Star";
 
 class Rating extends Component {
@@ -8,7 +8,7 @@ class Rating extends Component {
     render(){
         const {rating} = this.props;
         return(
-            <div ClassName={style.rating}>
+            <div ClassName={styles.rating}>
                 {[...Array(5)].map((element, index) => (
                     <Star isRated={index + 1 <= rating} />
                 ))}

@@ -1,5 +1,5 @@
 import { Component } from "react";
-import style from './Star.module.css'
+import styles from './Star.module.css'
 import { ReactComponent as GreyStar } from '../../assets/star_rate_grey-24px.svg'
 import { ReactComponent as PinkStar } from '../../assets/star_rate_pink-24px.svg'
 
@@ -9,7 +9,7 @@ class Star extends Component {
     render(){
         const {isRated} = this.props;
         return(
-            isRated ? <PinkStar className={style.star}/> : <GreyStar className={style.star}/>
+            isRated ? <PinkStar className={styles.star}/> : <GreyStar className={styles.star}/>
         )
     }
     

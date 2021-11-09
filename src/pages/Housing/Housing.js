@@ -3,7 +3,8 @@ import Carrousel from "../../components/Carrousel/Carrousel";
 import Tags from "../../components/Tags/Tags";
 import Rating from "../../components/Rating/Rating";
 import Profil from "../../components/Profil/Profil";
-import style from './Housing.module.css';
+import Collapse from "../../components/Collapse/Collapse";
+import styles from './Housing.module.css';
 import { withRouter } from "react-router";
 
 class Housing extends Component {
@@ -31,18 +32,22 @@ class Housing extends Component {
         const {matchedHousing} = this.state;
         console.log('from housing', matchedHousing.pictures)
         return (
-            <main className={style.housing}>
+            <main className={styles.housing}>
                 {matchedHousing.pictures ? <Carrousel pictures={matchedHousing.pictures} /> : null}
-                <section className={style.global}>
-                    <div className={style.mainInfo}>
+                <section className={styles.global}>
+                    <div className={styles.mainInfo}>
                         <h1>{matchedHousing.title}</h1>
                         <h2>{matchedHousing.location}</h2>
                         {matchedHousing.tags ? <Tags tags={matchedHousing.tags} /> : null}
                     </div>
-                    <div className={style.subInfo}>
+                    <div className={styles.subInfo}>
                         <Rating rating={matchedHousing.rating}/>
                         {matchedHousing.host ? <Profil name={matchedHousing.host.name} picture={matchedHousing.host.picture}/> : null}
                     </div>
+                </section>
+                <section className={styles.details}>
+                    <Collapse btnTitle="Descriptions" description={matchedHousing.description}/>
+                    <Collapse btnTitle="Équipements" equipments={matchedHousing.equipments}/>
                 </section>
             </main>
         )

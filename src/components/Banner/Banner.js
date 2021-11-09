@@ -1,5 +1,5 @@
 import { Component } from "react";
-import style from "./Banner.module.css"
+import styles from "./Banner.module.css"
 
 class Banner extends Component {
 
@@ -10,7 +10,7 @@ class Banner extends Component {
 
     render(){
         return (
-            <div className={style.banner}>
+            <div className={styles.banner}>
                 <img src={this.props.src} alt={this.props.alt} />
                 <h1>Chez vous, partout et ailleurs</h1>
             </div>

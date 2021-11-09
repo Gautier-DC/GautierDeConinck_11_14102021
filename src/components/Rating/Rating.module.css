@@ -3,5 +3,5 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    flex-basis: 50%;
+    height: 15px;
 }

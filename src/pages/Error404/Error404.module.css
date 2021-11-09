@@ -1,0 +1,53 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    flex-grow: 1;
+    padding: 1em;
+    height: 100vh;
+}
+
+.container h1{
+    font-size: 6.15em;
+    font-weight: 700;
+    margin: 0;
+}
+
+.container p{
+    font-size: 1.15em;
+    margin: 0;
+    text-align: center;
+}
+
+.container a{
+    font-size: 0.85em;
+    text-decoration: underline;
+    margin-top: 133px;
+}
+
+@media only screen and (min-width: 768px) {
+  
+    .container h1{
+      font-size: 18em;
+    }
+
+    .container p{
+      font-size: 2em;
+      padding: 0 2em;
+    }
+
+    .container a{
+      font-size: 1.15em;
+      padding: 0 2em;
+    }
+  }

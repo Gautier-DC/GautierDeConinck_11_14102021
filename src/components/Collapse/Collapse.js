@@ -28,7 +28,7 @@ class Collapse extends Component {
                     <Arrow className={`${styles.arrow} ${isOpen ? `${styles.active}` :""}`}/>
                 </button>
                 { isOpen && 
-                    <div className={`${styles.dropdownMenu} ${isOpen ? `${styles.active}` :""}`}>
+                    <div className={styles.dropdownMenu}>
                         {equipments ? 
                             <ul>
                                 {equipments.map((equipment, index) => (

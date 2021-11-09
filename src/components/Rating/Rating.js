@@ -10,7 +10,7 @@ class Rating extends Component {
         return(
             <div ClassName={styles.rating}>
                 {[...Array(5)].map((element, index) => (
-                    <Star isRated={index + 1 <= rating} />
+                    <Star isRated={index + 1 <= rating} key={'star-' + index}/>
                 ))}
             </div>
         )

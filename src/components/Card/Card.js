@@ -1,5 +1,5 @@
 import { Component } from "react";
-import style from './Card.module.css'
+import styles from './Card.module.css'
 import { Link } from 'react-router-dom';
 
 
@@ -7,23 +7,18 @@ class Card extends Component {
 
     constructor(props){
         super(props)
-        console.log(props)
+        console.log("======", props)
     }
 
     render(){
+        const {id,cover,title} = this.props
         return (
-            <div className={style.card}>
-                <Link
-                    to={{
-                        pathname: "/logements",
-                        search: "?sort=name",
-                        hash: "#the-hash",
-                        state: { fromDashboard: true }
-                    }}
-                    />
-                    <img src={this.props.cover} alt={this.props.title}/>
-                    <h2>{this.props.title}</h2>
-            </div>
+            <Link to={"/housing/" + id}>
+                <article className={styles.card}>
+                        <img src={cover} alt={title}/>
+                        <h2>{title}</h2>
+                </article>
+            </Link>
         )
     }
 }

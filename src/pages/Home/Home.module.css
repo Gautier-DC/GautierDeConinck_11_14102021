@@ -17,12 +17,19 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  z-index: -99;
 }
+
 .container::after {
   height: 0;
-  width: 30%;
+  width: 340px;
   content: "";
+}
+
+.container a {
+  display:block;
+  width: 100%;
+  cursor: pointer;
+  z-index: 99;
 }
 
 @media only screen and (min-width: 768px) {
@@ -35,9 +42,21 @@ main {
 }
 
 @media only screen and (min-width: 992px) {
+
   .container {
     flex-direction: row;
     flex-wrap: wrap;
     flex-basis: 340px;
+  }
+
+  .container a {
+    width: 48%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .container a {
+      width: 340px;
   }
 }

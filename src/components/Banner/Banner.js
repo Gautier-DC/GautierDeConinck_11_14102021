@@ -1,13 +1,17 @@
 import { Component } from "react";
-import homeBanner from "../../assets/home_banner_1240x223.png"
-import style from "./Banner.module.css"
+import styles from "./Banner.module.css"
 
 class Banner extends Component {
 
+    constructor(props){
+        super(props)
+        console.log(props)
+    }
+
     render(){
         return (
-            <div className={style.banner}>
-                <img src={homeBanner} alt='littoral rocheux et argileux' />
+            <div className={styles.banner}>
+                <img src={this.props.src} alt={this.props.alt} />
                 <h1>Chez vous, partout et ailleurs</h1>
             </div>
         )

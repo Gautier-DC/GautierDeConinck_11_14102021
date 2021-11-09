@@ -1,0 +1,29 @@
+.profil {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profil p {
+    font-size: 0.75em;
+    text-align: right;
+    padding: 0 0.5em;
+    margin: 0;
+}
+
+.profil img {
+    height: 32px;
+    border-radius: 50%;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .profil p {
+        font-size: 1.15em;
+    }
+
+    .profil img {
+        height: 64px;
+    }
+}

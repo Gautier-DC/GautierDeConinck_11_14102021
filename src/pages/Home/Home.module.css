@@ -1,13 +1,3 @@
-main {
-  padding: 20px 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1240px;
-  margin: auto;
-}
-
 .container {
   background-color: none;
   border-radius: 25px;

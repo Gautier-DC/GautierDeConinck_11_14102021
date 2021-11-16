@@ -14,7 +14,7 @@
     margin-bottom: auto;
     flex-grow: 1;
     padding: 1em;
-    height: 100vh;
+    min-height: calc(100vh - var(--hdrheight) - var(--ftrheight));
 }
 
 .container h1{

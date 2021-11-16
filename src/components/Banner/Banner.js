@@ -3,17 +3,12 @@ import styles from "./Banner.module.css"
 
 class Banner extends Component {
 
-    constructor(props){
-        super(props)
-        console.log(props)
-    }
-
     render(){
-        const {src, alt, title} = this.props;
+        const {page, src, alt, title} = this.props;
         return (
-            <div className={styles.banner}>
-                <img src={this.props.src} alt={this.props.alt} />
-                <h1>{title}</h1>
+            <div className={page === 'home'? `${styles.banner}` : `${styles.abtbanner}`}>
+                <img src={src} alt={alt} />
+                {page === 'home' && <h1>{title}</h1>}
             </div>
         )
     }

@@ -12,7 +12,7 @@ class About extends Component {
     const secuDesc = "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien ";
     return (
       <main className={styles.about}>
-        <Banner src={aboutBanner} alt="Paysage montagneux" />
+        <Banner page={'about'} src={aboutBanner} alt="Paysage montagneux" />
         <section className={styles.containerAbout}>
             <Collapse btnTitle="Fiabilité" description={fiabDesc} />
             <Collapse btnTitle="Respect" description={respDesc} />

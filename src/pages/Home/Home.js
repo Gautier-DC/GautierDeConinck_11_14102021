@@ -15,7 +15,6 @@ class Home extends Component {
     async componentDidMount() {
         try {
             const response = await fetch('../../../logementsData.json')
-            console.log("xxxxx", response);
             const json = await response.json()
             this.setState({ data:json })
         } catch(error) {
@@ -26,7 +25,7 @@ class Home extends Component {
     render(){
         return (
             <main>
-                <Banner src={homeBanner} title={"Chez vous, partout et ailleurs"} alt="littoral rocheux et argileux"/>
+                <Banner page={'home'} bannerStyle={styles.banner} src={homeBanner} title={"Chez vous, partout et ailleurs"} alt="littoral rocheux et argileux"/>
                 <div className={styles.container}>
                     {this.state.data.map(el => (
                         <Card title={el.title} alt={el.title} cover={el.cover} key={el.title + el.id} id={el.id}/>

@@ -8,7 +8,7 @@ class Rating extends Component {
     render(){
         const {rating} = this.props;
         return(
-            <div ClassName={styles.rating}>
+            <div className={styles.rating}>
                 {[...Array(5)].map((element, index) => (
                     <Star isRated={index + 1 <= rating} key={'star-' + index}/>
                 ))}

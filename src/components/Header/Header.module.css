@@ -1,6 +1,7 @@
 .header {
   padding: 20px;
   padding-bottom: 0;
+  max-height: var(--hdrheightresp);
   display: flex;
   flex-direction: row;
   justify-content: space-between;

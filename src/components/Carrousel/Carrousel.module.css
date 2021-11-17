@@ -22,7 +22,7 @@
     cursor: pointer;
     position: absolute;
     z-index: 2;
-    rotate: 180deg;
+    transform: rotate(180deg);
     background: none;
     border: none;
 }
@@ -49,11 +49,12 @@
 @media only screen and (min-width: 992px) {
 
     .carrousel{
-        height: 415px
+        height: 415px;
     }
 
-    .previous, .next{
-        transform: scale(3);
-        margin: 0 1em;
+    .previous svg ,.next svg {
+        width: auto;
+        height: 4rem;
+        margin: 0;
     }
 }

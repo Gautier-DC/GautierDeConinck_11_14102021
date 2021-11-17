@@ -5,11 +5,6 @@ import { Link } from 'react-router-dom';
 
 class Card extends Component {
 
-    constructor(props){
-        super(props)
-        console.log("======", props)
-    }
-
     render(){
         const {id,cover,title} = this.props
         return (

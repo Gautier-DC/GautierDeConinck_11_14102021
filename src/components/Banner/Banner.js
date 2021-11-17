@@ -3,16 +3,13 @@ import styles from "./Banner.module.css"
 
 class Banner extends Component {
 
-    constructor(props){
-        super(props)
-        console.log(props)
-    }
-
     render(){
+        const {page, src, alt, title} = this.props;
         return (
-            <div className={styles.banner}>
-                <img src={this.props.src} alt={this.props.alt} />
-                <h1>Chez vous, partout et ailleurs</h1>
+            // Use different class to stuck to the mock-up without creating an other banner
+            <div className={page === 'home'? `${styles.banner}` : `${styles.abtbanner}`}>
+                <img src={src} alt={alt} />
+                {page === 'home' && <h1>{title}</h1>}
             </div>
         )
     }

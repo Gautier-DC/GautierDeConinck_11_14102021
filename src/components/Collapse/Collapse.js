@@ -11,10 +11,9 @@ class Collapse extends Component {
 
     toggleMenu(e){
         e.preventDefault();
-        const {isOpen} = this.state;
-        this.setState({
-            isOpen: !isOpen
-        });
+        this.setState((prevState) => ({
+            isOpen: !prevState.isOpen
+        }));
     }
 
     //Create dropdown button
@@ -27,19 +26,17 @@ class Collapse extends Component {
                     {btnTitle}
                     <Arrow className={`${styles.arrow} ${isOpen ? `${styles.active}` :""}`}/>
                 </button>
-                { isOpen && 
-                    <div className={styles.dropdownMenu}>
-                        {equipments ? 
-                            <ul>
-                                {equipments.map((equipment, index) => (
-                                    <li className={styles.item} key={index}>
-                                        {equipment}
-                                    </li>
-                                ))}
-                            </ul>
-                        : <p>{description}</p>}
-                    </div>
-                }
+                <div className={`${styles.dropdownMenu} ${isOpen ? `${styles.active}` :""}`}>
+                    {equipments ? 
+                        <ul>
+                            {equipments.map((equipment, index) => (
+                                <li className={styles.item} key={index}>
+                                    {equipment}
+                                </li>
+                            ))}
+                        </ul>
+                    : <p>{description}</p>}
+                </div>
             </div>
         )
     }

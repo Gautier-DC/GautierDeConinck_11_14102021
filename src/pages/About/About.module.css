@@ -1,0 +1,16 @@
+.containerAbout{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 1em 0;
+    min-height: calc(100vh - var(--hdrheight) - var(--ftrheight) - 223px);
+}
+
+@media only screen and (min-width: 992px) {
+
+    .containerAbout{
+        width: 80%;
+    }
+}

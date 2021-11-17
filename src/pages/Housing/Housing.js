@@ -22,6 +22,7 @@ class Housing extends Component {
             const response = await fetch('../../../logementsData.json')
             if (response.ok) {
                 const allHousings = await response.json()
+                //Check if there is a housing and if not trigger an error
                 const foundHouse = allHousings.find(housing => housing.id === resquestedHousing)
                 if(foundHouse){
                     this.setState({matchedHousing:foundHouse})                    
@@ -37,6 +38,7 @@ class Housing extends Component {
     render(){
         const {matchedHousing, error} = this.state;
         return (
+            //If there is an error redirect to 404
             error === false ?
                 <main className={styles.housing}>
                     {matchedHousing.pictures ? <Carrousel pictures={matchedHousing.pictures} /> : null}
